@@ -1,9 +1,11 @@
 // import {  StatusBar} from "expo-status-bar";
 import { React } from "react";
+import { filterData } from "../global/data";
 import {
   StyleSheet,
   Text,
   View,
+  FlatList,
   Dimensions,
   ScrollView,
   StatusBar,
@@ -40,11 +42,50 @@ const HomeScreen = () => {
               </View>
             </View>
             <View>
-                <Image
-                  style = {styles.image1}
-                  source = {require("../../assets/uberCar.png")}
-                />
+              <Image
+                style={styles.image1}
+                source={require("../../assets/uberCar.png")}
+              />
+            </View>
+          </View>
+        </View>
+
+        <View>
+          <FlatList
+            numRows={4}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            data={filterData}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <View style={styles.card}>
+                <View style={styles.view2}>
+                  <Image style={styles.image2} source={item.image} />
                 </View>
+                <View>
+                  <Text style={styles.title}>{item.name}</Text>
+                </View>
+              </View>
+            )}
+          />
+        </View>
+
+        <View style={styles.view3}>
+          <Text style ={styles.text3}>Where to ?</Text>
+          <View style={styles.view4}>
+            <Icon
+              type="material-community"
+              name="clock-time-four"
+              color={colors.grey1}
+              size={26}
+            />
+            <Text style ={{marginLeft:5}}>Now</Text>
+            <Icon
+              type="material-community"
+              name="chevron-down"
+              color={colors.grey1}
+              size={26}
+            />
           </View>
         </View>
       </ScrollView>
