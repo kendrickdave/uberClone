@@ -15,6 +15,7 @@ import { Icon } from "react-native-elements";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 import { colors, parameters } from "../global/styles";
+import { color } from "react-native-elements/dist/helpers";
 
 const HomeScreen = () => {
   return (
@@ -71,7 +72,7 @@ const HomeScreen = () => {
         </View>
 
         <View style={styles.view3}>
-          <Text style ={styles.text3}>Where to ?</Text>
+          <Text style={styles.text3}>Where to ?</Text>
           <View style={styles.view4}>
             <Icon
               type="material-community"
@@ -79,11 +80,40 @@ const HomeScreen = () => {
               color={colors.grey1}
               size={26}
             />
-            <Text style ={{marginLeft:5}}>Now</Text>
+            <Text style={{ marginLeft: 5 }}>Now</Text>
             <Icon
               type="material-community"
               name="chevron-down"
               color={colors.grey1}
+              size={26}
+            />
+          </View>
+        </View>
+
+        <View style={styles.view5}>
+          <View style={styles.view6}>
+            <View style={styles.view7}>
+              <Icon
+                type="material-community"
+                name="map-marker"
+                color={colors.black}
+                size={22}
+              />
+            </View>
+            <View>
+              <Text style={{ fontSize: 18, color: colors.black }}>
+                32 Olivia Rd
+              </Text>
+              <Text style={{ color: colors.grey3 }}>
+                Klipfontein 83-Ir, Boksburg
+              </Text>
+            </View>
+          </View>
+          <View>
+            <Icon
+              type="material-community"
+              name="chevron-right"
+              color={colors.grey}
               size={26}
             />
           </View>
